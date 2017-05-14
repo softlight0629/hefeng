@@ -1,0 +1,58 @@
+{% extends "./layout/default.html" %}
+
+{% block content %}
+<style type="text/css" media="">
+
+</style>
+<section class="container_12">
+  <div class="grid_3">
+    {% include './layout/category.html' %}
+
+    {% include './layout/news_module.html' %}
+
+  </div> 
+
+  <div class="grid_9">
+    <div class="module">
+      <h5>产品展示</h5>
+      <div class="products" style="min-height: 600px;">
+        <ul class="clearfix">
+         {% for item in paginator.items %}
+          <li>
+            <div class="product_info">
+              <p class="product_img">
+              <a href="/products/{{ item.category }}/{{ item.id }}"><img src="{{ item.pic }}" alt="" width="130" height="130"></a>
+              </p>
+              <p class="product_name">
+              <a href="/products/{{ item.category }}/{{ item.id }}">{{ item.name }}</a>
+              </p>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+
+        {% if paginator.pageCount > 1%}
+        <div class="navigate">
+          <span style="padding-right: 10px;">总数：{{ paginator.count }}</span>
+          {% if  paginator.pageNum > 1 %}
+          <a href="/products/{{cid}}?pageNum={{paginator.pageNum - 1}}">«上一页</a>
+          {% else %}
+          <a href="/products/{{cid}}?pageNum=1">«上一页</a>
+          {% endif %}
+          {% for i in range(1, paginator.pageCount + 1) %}
+          <a href="/products/{{cid}}?pageNum={{i}}">{{i}}</a>
+          {% endfor %}
+          {% if paginator.pageNum < paginator.pageCount %}
+          <a href="/products/{{cid}}?pageNum={{paginator.pageNum + 1}}">下一页»</a>
+          {% else %}
+          <a href="/products/{{cid}}?pageNum={{paginator.pageCount}}">下一页»</a>
+          {% endif %}
+        </div>
+        {% endif  %}
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}
+

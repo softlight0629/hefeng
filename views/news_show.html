@@ -1,0 +1,106 @@
+{% extends "./layout/default.html" %}
+
+{% block content %}
+<style type="text/css" media="">
+div.news_show {
+  padding-bottom: 10px;
+}
+
+.news_title {
+  font-size: 20px;
+  padding: 15px 5px;
+  margin: 0 10px;
+  color: #333;
+  border-bottom: 1px dashed #ccc;
+  text-align: center;
+  font-weight: bold;
+}
+
+.news_meta {
+  padding: 5px 20px 10px 20px;
+  color: #666;
+}
+
+.news_pv {
+  float: right;
+}
+
+.summary {
+  margin-bottom: 10px;
+}
+
+.news_content {
+  padding: 10px;
+  line-height: 18px;
+  border-bottom: 1px solid #666;
+}
+
+.news_content p {
+  font-size: 14px;
+  text-indent: 28px;
+  margin-bottom: 10px;
+}
+
+.news_content img {
+  border: 1px solid #cecece
+}
+
+.news_nav {
+  text-align: center;
+}
+
+.news_nav a {
+  display: inline-block;
+  color: #666;
+  text-decoration: none;
+  padding: 2px 10px;
+}
+
+.news_nav a:hover {
+  color: #ff0000;
+}
+
+</style>
+<section class="container_12">
+  <div class="grid_3">
+    {% include './layout/category.html' %}
+
+    {% include './layout/fuwu_module.html' %}
+
+  </div> 
+
+  <div class="grid_9">
+    <div class="module">
+      <h5>新闻动态</h5>
+      <div class="news_show">
+        <div class="news_show_inner">
+          <div class="summary">
+            <h1 class='news_title'>{{ news.text }}</h1>
+            <p class="news_meta">
+            <span>来源：admin 发布时间：2017/02/16</span>
+            <span class="news_pv">浏览次数：358908</span>
+            </p>
+          </div>
+          <div class="news_content">
+            <div class="news_content_inner">
+              <p>多功能蒸气式红薯粉丝机工艺：红薯—提取淀粉—搅拌调浆—上料—入机漏粉—散粉—上杆晾晒（烘干）—包装—成品入库</p>
+              <p style="text-align:center;"><img src="/images/products/fensiji/145/01.jpg" style="width: 247px; height: 205px;"></p>
+              <p>多功能蒸气式粉丝机特点：适用各种淀粉以及混合淀粉制作粉条；成品晶莹透亮、耐煮耐泡、不糊汤、不断条、不粘连。具有干净卫生、外观平整、晶莹透亮、口感细腻、食用方便、易贮运等优点。 工艺先进，设备结构合理、外形美观、生产产量大、产品品质稳定、操作简易、投资小、见效快</p>
+              <p>多功能蒸气式粉丝机选配套机械：搅拌机、上料机、川粉头、专业粉皮头、传输带等。</p>
+              <p>温州经济技术开发区滨海永林粉丝机，专业的红薯粉丝机厂家，欢迎来电咨询。</p>
+              <p><br></p> 
+            </div>
+          </div>
+        </div>
+      <div class="news_nav">
+          <a href="mw">←[上一个新闻：苏丹红、三聚氢胺等走进生活，还能安心地当个吃货吗？]   </a> 
+          <a href="#">[下一个新闻：真空油炸机]→</a> 
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+
+

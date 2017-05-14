@@ -1,0 +1,217 @@
+{% extends "./layout/default.html" %}
+
+{% block content %}
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+<style type="text/css" media="">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+
+div.contact_us {
+  padding-left: 45px;
+  padding-top: 25px;
+  font-size: 14px;
+  padding-bottom: 45px;
+}
+
+.contact_us > div {
+  margin-bottom: 10px;
+}
+
+.contact_us .label {
+  float: left;
+}
+
+.contact_us .contact_detail {
+  float: left;
+} 
+
+.contact_us .contact_detail p {
+  margin-bottom: 5px;
+}
+
+.contact_us .contact_detail img {
+  position: relative;
+  top: -2px;
+}
+
+.contact_us .contact_detail span {
+  float: left;
+  margin-right: 10px;
+}
+</style>
+<section class="container_12">
+  <div class="grid_3">
+    {% include './layout/category.html' %}
+
+    {% include './layout/news_module.html' %}
+
+  </div> 
+  <div class="grid_9">
+    <div class="module">
+      <h5>联系我们</h5> 
+      <div class="contact_us">
+        <div class="clearfix">
+          <span class="label">联系人：</span>
+          <div class="contact_detail">
+            <p class="clearfix">
+            <span>郭键毅</span><span>13858847388</span> <span><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=99628028&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:99628028:41" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></span>
+            </p>
+            <p class="clearfix">
+            <span>张崇慧</span><span>13857776677</span><span><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=99628028&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:99628028:41" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></span>
+
+            </p>
+            <p class="clearfix">
+            <span>郭海滨</span><span>13868844844</span><span><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=99628028&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:99628028:41" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></span>
+
+            </p>
+          </div>
+        </div>
+        <div class="clearfix">
+          <span class="label">电话：</span>
+          <div class="contact_detail">
+            <p>
+            <span>0577-86361187</span>
+            </p>
+          </div>
+        </div>
+        <div class="clearfix">
+          <span class="label">传真：</span>
+          <div class="contact_detail">
+            <p>
+            <span>0577-86361187</span>
+            </p>
+          </div>   
+        </div>
+        <div class="clearfix">
+          <span class="label">邮箱：</span>
+          <div class="contact_detail">
+            <p>
+            <span>jueni998@hotmail.com</span>
+            </p>
+          </div>   
+        </div>
+        <div class="clearfix">
+          <span class="label">地址：</span>
+          <div class="contact_detail">
+            <p>
+            <span>浙江温州瓯海区娄桥街道娄桥村天灯路169号</span>
+            </p>
+          </div>   
+        </div>
+        <div class="clearfix">
+          <span class="label">微信：</span>
+          <div class="contact_detail">
+            <p class="clearfix">
+            <span>
+              <img src="http://www.wzhefeng.cn/template/style02/sj_contact.jpg" alt="" style="top: 0;"> 
+            </span>
+            </p>
+          </div>   
+        </div>
+        <div class="clearfix">
+          <div style="width:550px;height:350px;border:#ccc solid 1px;" id="dituContent"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(120.605106,27.963944);//定义一个中心点坐标
+        map.centerAndZoom(point,15);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+	map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+	map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+	map.addControl(ctrl_sca);
+    }
+    
+    //标注点数组
+    var markerArr = [{title:"瓯海禾丰粉丝机制造厂",content:"我的备注",point:"120.614592|27.964223",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+		 ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+			
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//创建和初始化地图
+</script>
+
+{% endblock %}

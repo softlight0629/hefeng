@@ -1,0 +1,137 @@
+{% extends "./layout/default.html" %}
+
+{% block content %}
+<style type="text/css" media="">
+
+div.about_us {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 25px;
+  max-height: 600px;
+}
+
+.about_us p {
+  text-indent: 28px;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.about_hornor_inner {
+  overflow: hidden;
+  position: relative;
+  height: 180px;
+}
+
+.about_hornor_inner ul {
+  height: 130px;
+  overflow: hidden;
+  width: 940px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  position: absolute;
+}
+
+.about_hornor_inner ul li {
+  float: left;
+  padding-left: 35px;
+}
+
+.about_hornor_inner ul li img {
+  width: 200px;
+  height: 128px;
+}
+
+.about_hornor_inner .marquee_2 {
+  left: 940px;
+}
+
+</style>
+<section class="container_12">
+  <div class="grid_3">
+    {% include './layout/category.html' %}
+
+    {% include './layout/news_module.html' %}
+    
+  </div> 
+  <div class="grid_9">
+      <div class="module">
+        <h5>关于禾丰</h5>
+        <div class="about_us">
+          <p>浙江瓯海禾丰粉丝机制造厂创办于1986年，地处温州市瓯海娄桥，是国内较早生产粉丝机及食品机械设备的厂家。</p>
+          <p>禾丰机械顺应市场需求，服务经济建设，面向企业和基层。经过多年的努力与创新，逐步发展成为极具竞争优势的规模化企业，并以雄厚的技术实力，相继开发研制了一系列品质可靠经济实用能为用户带来良好经济效益的先进设备，该系列产品畅销全国各地。历年来，企业荣获了省市“科技进步奖”，“发明成果奖”等诸多奖项。禾丰机械以良好的信誉赢得了全国用户的信赖，得到了各级领导的好评。</p>
+
+          <p>“质量第一”，“用户至上”是我们的经营宗旨，我们将本着务实的合作态度和灵活多变的经营策略，欢迎广大新老用户光临指导——愿我们精诚合作，共创辉煌！</p>
+        </div>
+      </div> 
+
+      <div class="module about_hornor">
+        <h5>禾丰荣誉</h5>
+        <div class="about_hornor_inner">
+          <ul class="marquee marquee_1 clearfix">
+            <li> 
+              <img src="/images/honor1.jpg" alt=""> 
+            </li> 
+            <li> 
+              <img src="/images/honor2.jpg" alt=""> 
+            </li>
+            <li> 
+              <img src="/images/honor3.jpg" alt=""> 
+            </li>
+            <li> 
+              <img src="/images/honor4.jpg" alt=""> 
+            </li>
+          </ul>
+          <ul class="marquee marquee_2 clearfix">
+            <li> 
+              <img src="/images/honor1.jpg" alt=""> 
+            </li> 
+            <li> 
+              <img src="/images/honor2.jpg" alt=""> 
+            </li>
+            <li> 
+              <img src="/images/honor3.jpg" alt=""> 
+            </li>
+            <li> 
+              <img src="/images/honor4.jpg" alt=""> 
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</section>
+
+<script language="javascript" type="text/javascript">  
+$(function() {
+
+  var inc = 0;
+
+  function marquee() {
+    inc++;
+    var width = $('.marquee_1').width();
+    var l1left = parseInt($('.marquee_1').css('left').replace(/px$/g, ''));
+
+    if (inc % 2 == 0) {
+      $('.marquee_1').animate({'left': '0px'}, 18000, 'linear', function() {
+        $('.marquee_1').css({'left': '0px'});
+        setTimeout(marquee, 20);
+      });
+      $('.marquee_2').animate({'left': (-1 * width) + 'px'}, 18000, 'linear', function() {
+        $('.marquee_2').css({'left': width + 'px'});
+      });
+
+    } else {
+      $('.marquee_1').animate({'left': (-1 * width) + 'px'}, 18000, 'linear', function() {
+        $('.marquee_1').css({'left': width + 'px'});
+        setTimeout(marquee, 20);
+      });
+
+      $('.marquee_2').animate({'left': '0px'}, 18000, 'linear', function() {
+        $('.marquee_2').css({'left': '0px'});
+      }); 
+    }
+  }
+
+  marquee();
+});
+</script>  
+{% endblock %}

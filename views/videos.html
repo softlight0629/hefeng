@@ -1,0 +1,78 @@
+{% extends "./layout/default.html" %}
+
+{% block content %}
+<style type="text/css" media="">
+
+.videos_info ul {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.videos_info ul li {
+  display: inline-block;
+  padding: 0 10px;
+  margin-top: 20px;
+}
+
+.videos_info ul li a {
+  display: block;
+}
+
+.videos_info ul li p {
+  margin-top: 10px;
+}
+
+</style>
+<section class="container_12">
+  <div class="grid_3">
+    <!-- 
+    <div class="module">
+      <h5>产品视频</h5>
+      <div class="category">
+        <ul>
+          <li><a href="">粉丝机系列</a></li>
+          <li><a href="">搅拌机系列</a></li>
+          <li><a href="">粉丝机配件系列</a></li>
+          <li><a href="">年糕机系列</a></li>
+          <li><a href="">虾片机系列</a></li>
+        </ul>
+      </div>
+    </div>
+ -->
+    {% include './layout/category.html' %}
+
+    {% include './layout/news_module.html' %}
+
+  </div> 
+  <div class="grid_9">
+<div class="module">
+  <h5>产品视频</h5> 
+  <div class="videos_info">
+    <ul>
+      <li>
+        <a href="/videos/1"><img src="/images/videos/01.png" alt="" width="300" height="180"></a>
+        <p>185粉丝机</p>
+      </li>
+      <li><a href="/videos/2"><img src="/images/videos/02.png" alt="" width="300" height="180"></a>
+        <p>185粉丝机</p>
+      </li>
+      <li><a href="/videos/3"><img src="/images/videos/03.png" alt="" width="300" height="180"></a>
+        <p>185粉丝机</p>
+      </li>
+      <li><a href="/videos/4"><img src="/images/videos/04.png" alt="" width="300" height="180"></a>
+        <p>185粉丝机</p>
+      </li>
+      <li><a href="/videos/5"><img src="/images/videos/05.png" alt="" width="300" height="180"></a>
+        <p>185粉丝机</p>
+      </li>
+      <li><a href="/videos/6"><img src="/images/videos/06.png" alt="" width="300" height="180"></a>
+        <p>185粉丝机</p>
+      </li>
+    </ul>
+  </div>
+</div>
+  </div>
+</section>
+{% endblock %}
+
+

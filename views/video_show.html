@@ -1,0 +1,64 @@
+{% extends "./layout/default.html" %}
+
+{% block content %}
+<style type="text/css" media="">
+div.video_show {
+  padding-bottom: 10px;
+}
+
+.video_title {
+  font-size: 20px;
+  padding: 15px 5px;
+  margin: 0 10px;
+  color: #333;
+  border-bottom: 1px dashed #ccc;
+  text-align: center;
+  font-weight: bold;
+}
+
+.summary {
+  margin-bottom: 10px;
+}
+
+.video_content {
+  padding: 10px;
+}
+
+.video_content .video_embed{
+  text-align: center;
+}
+
+</style>
+<section class="container_12">
+  <div class="grid_3">
+    {% include './layout/category.html' %}
+
+    {% include './layout/fuwu_module.html' %}
+
+  </div> 
+
+  <div class="grid_9">
+    <div class="module">
+      <h5>产品视频</h5>
+      <div class="video_show">
+        <div class="video_show_inner">
+          <div class="summary">
+            <h1 class='video_title'>{{v.name}}</h1>
+          </div>
+          <div class="video_content">
+            <div class="video_content_inner">
+           <p class="video_embed">
+           <embed height="480" width="640" type="application/x-shockwave-flash" align="middle" quality="high" src="{{v.video}}" allowfullscreen="true" allowscriptaccess="always">
+          </p> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+
+
+

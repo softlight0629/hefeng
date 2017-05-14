@@ -1,0 +1,11 @@
+<div class="module">
+  <h5>新闻动态</h5> 
+  <div class="news_info">
+    <ul>
+      {% for news in news_list%}
+      <li><a href="/news/{{news.id}}" alt="{{news.text}}">{{news.text | truncate(13)}}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+

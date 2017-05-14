@@ -1,0 +1,41 @@
+{% extends "./layout/default.html" %}
+
+{% block content %}
+<style type="text/css" media="">
+  .support_info_inner {
+    padding: 10px 25px 15px 25px;; 
+  }
+
+  .support_info_inner p {
+    font-size: 18px;
+
+  }
+
+  .zongzhi {
+    font-weight: bold;
+    margin-top: 15px;
+  }
+</style>
+<section class="container_12">
+  <div class="grid_3">
+    {% include './layout/category.html' %}
+
+    {% include './layout/fuwu_module.html' %}
+
+  </div> 
+  <div class="grid_9">
+<div class="module">
+  <h5>服务支持</h5> 
+  <div class="support_info">
+    <div class="support_info_inner">
+      <p>技术：不断创新，追求完美</p>
+      <p>细节：精益求精，力争卓越</p>
+      <p>服务：客户至上，服务周全</p>
+      <p class="zongzhi">经营宗旨：“质量第一”，“客户至上”</p>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+{% endblock %}
+
