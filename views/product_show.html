@@ -77,6 +77,77 @@ div.product_show {
   margin-bottom: 45px;
   line-height: 30px;
 }
+
+.product_intro_section {
+  margin-bottom: 24px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.prodcut_intro_title {
+  font-size: 18px;
+  font-family: '宋体';
+  font-weight: bold;
+  color: #03a9f4;
+  margin-bottom: 16px;
+}
+
+.product_intro_content {
+  padding-left: 18px;
+  font-size: 14px;
+  color: #333;
+}
+
+.product_intro_content p {
+  margin-bottom: 8px;
+}
+
+.args_table {
+  width: 80%;
+}
+
+.args_table,
+.args_table tr th, 
+.args_table tr td { 
+  border:1px solid #333; 
+}
+
+.args_table tr td {
+  padding: 4px;
+}
+
+.args-title {
+  width: 20%;
+}
+
+.args-value {
+  font-weight: bold;
+  width: 30%;
+  
+}
+
+.intro_label {
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 2px;
+  text-align: right;
+  width: 100px;
+}
+
+.product_nav {
+  text-align: center;
+}
+
+.product_nav a {
+  display: inline-block;
+  color: #666;
+  text-decoration: none;
+  padding: 2px 10px;
+}
+
+.product_nav a:hover {
+  color: #ff0000;
+}
 </style>
 <section class="container_12">
   <div class="grid_3">
@@ -93,44 +164,121 @@ div.product_show {
         <div class="product_show_inner">
           <div class="summary">
             <h1 class='product_title'>{{ product.name }}</h1>
-            <p class="product_view"><span>浏览次数：358908</span></p>
+            <p class="product_view"><span></span></p>
             <img class="product_pic" src="{{ product.pic }}" alt="" width="450" height="450"/>
           </div>
           <div class="product_intro">
-            <div class="product_text_intro">
-              <p>机器外壳均为S经过抛光研磨处理，符合美观与卫生标准。
- 
-机器上盖间作进料座，进料更方便。清洗粉碎槽内粉粒子，快速简单。</p>
+            <div class="product_intro_section"> 
+              <h3 class="prodcut_intro_title">【 生产经验简介 】</h3>
+              <div class="product_intro_content">
+                <p>
+                 本厂创办于1986年，地处温州市瓯海娄桥，是国内较早生产粉丝机及食品机械设备的厂家。建厂以来先后生产粉丝机、米面机、年糕机、虾片机等多种食品机械设备。期间不断研究创新，企业荣获省市“科技进步奖”，“发明成果奖”等诸多奖项。
+                </p>
+                <p>
+                 禾丰牌产品以可靠的质量，优质的服务和良好的信誉赢得全国用户的信赖，得到各级领导的好评。本系列产品曾多次远销海外并赢得良好的口碑。
+                </p>
+                <p>
+                 欢迎新老顾客前来咨询惠顾，我们将竭诚为您服务!
+                </p>
+              </div>
             </div>
-
-            <div class="arguments">
-              <p>
-              <span class="label">名称：</span><span class="value">{{ product.name }}</span></span>
-              </p> 
-              <p>
-              <span class="label">功率：</span><span class="value">18.5W</span></span>
-              </p> 
-              <p>
-              <span class="label">转速：</span><span class="value">1460转/分</span></span>
-              </p> 
-              <p>
-              <span class="label">产量：</span><span class="value">130-150 kg/h </span></span>
-              </p> 
-              <p>
-              <span class="label">重量：</span><span class="value">600KG</span></span>
-              </p> 
-              <p>
-              <span class="label">轧辊对数：</span><span class="value">6~10对</span></span>
-              </p> 
-              <p>
-              <span class="label">总功率：</span><span class="value">依配置而定</span></span>
-              </p> 
+            <div class="product_intro_section"> 
+              <h3 class="prodcut_intro_title">【 设备用途 】</h3>
+              <div class="product_intro_content">
+                <p>
+                 本产品可用于生产粉丝、米粉、面条，操作简单，自动化程度高。 加工食品外表光滑，筋软湿度，有弹性，味道纯正。 食品权威人事一致认为，粉丝，米粉等杂粮粉丝产业是当前最具有发展前途的朝阳产业，是最值得投资的项目。
+                </p>
+                <p>
+                  民以食为天，老百姓对绿色杂粮食品的需求以每年30%的速度递增，生产利润丰厚。
+                </p>
+              </div>
+            </div>
+            <div class="product_intro_section"> 
+              <h3 class="prodcut_intro_title">【 适用对象 】</h3>
+              <div class="product_intro_content">
+                <p>
+                  规模化生产粉丝，米粉，面条等食品加工农场、集体， 也适用于有意参与食品加工行业的个体。
+                </p>
+              </div>
+            </div>
+            <div class="product_intro_section"> 
+              <h3 class="prodcut_intro_title">【 设备参数 】</h3>
+              <div class="product_intro_content">
+                <table class="args_table" border="1">
+                  <tbody>
+                    <tr>
+                      <td class="args-title">加工定制</td>
+                      <td class="args-value">是</td>
+                      <td class="args-title">可生产产品</td>
+                      <td class="args-value">粉丝，米粉，面条</td>
+                    </tr>
+                    <tr>
+                      <td class="args-title">品牌</td>
+                      <td class="args-value">禾丰牌</td>
+                      <td class="args-title">型号</td>
+                      <td class="args-value">RF-187型</td>
+                    </tr>
+                    <tr>
+                      <td class="args-title">功率</td>
+                      <td class="args-value">30(kw)</td>
+                      <td class="args-title">适用范围</td>
+                      <td class="args-value">西餐店设备，休闲食品厂设备,中餐店设备，冷冻食品厂设备</td>
+                    </tr>
+                    <tr>
+                      <td class="args-title">转速</td>
+                      <td class="args-value">1460转/分</td>
+                      <td class="args-title">外形尺寸</td>
+                      <td class="args-value">1060*650*500(mm)</td>
+                    </tr>
+                    <tr>
+                      <td class="args-title">产量</td>
+                      <td class="args-value">250-300kg/h </td>
+                      <td class="args-title">重量</td>
+                      <td class="args-value">650KG</td>
+                    </tr>
+                    <tr>
+                      <td class="args-title">轧辊对数</td>
+                      <td class="args-value">6~10对</td>
+                      <td class="args-title">总功率</td>
+                      <td class="args-value">依配置而定</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="product_intro_section"> 
+              <h3 class="prodcut_intro_title">【 设备优越性 】</h3>
+              <div class="product_intro_content">
+                <p>
+                  <span class="intro_label">S型抛光研磨：</span>
+                  <span class="intro_desc">本机型均采用S型抛光研磨处理，外观精致，符合美观卫生双重标准。</span>
+                </p>
+                <p>
+                  <span class="intro_label">操作方便：</span>
+                  <span class="intro_desc">本机型上盖间为进料座， 方便人工作业，进料方便快捷，清洗粉碎槽内粉粒子，快速简单。</span>
+                </p>
+                <p>
+                  <span class="intro_label">功效强劲：</span>
+                  <span class="intro_desc">采用强力30千瓦4级马达， 强劲功效，持续输出，快速提高生产效率。</span>
+                </p>
+                <p>
+                  <span class="intro_label">可调速：</span>
+                  <span class="intro_desc">本机型电路一律装有调速机，可以预防马达线圈过载烧毁。</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
+        <div class="product_nav">
+          {% if prev %}
+            <a href="/products/{{prev.category}}/{{ prev.id }}" style="float:left;">←[上一个：{{ prev.simplename }}]   </a> 
+          {% endif %}
+          {% if next %}
+          <a href="/products/{{next.category}}/{{ next.id }}" style="float:right;">[下一个：{{ next.simplename }}]→</a> 
+          {% endif %}
+      </div>
       </div>
     </div>
-
   </div>
 </section>
 {% endblock %}

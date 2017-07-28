@@ -12,35 +12,55 @@
 
   </div> 
   <div class="grid_9">
-<div class="module">
-  <h5>新闻动态</h5> 
-  <div class="news_info">
-    <ul>
-      {% for news in paginator.items %}
-      <li><a href="/news/{{news.id}}">[{{news.category}}] {{news.text}}</a> <span class="news_time">[{{news.time}}]</span> </li>
-      {% endfor %}
-    </ul>
+    <div class="module">
+      <h5>新闻动态</h5> 
+      <div class="news_info">
+        <ul>
+          {% for news in paginator.items %}
+          <li><a href="/news/{{news.id}}#banner">[行业新闻] {{news.name}}</a></li>
+          {% endfor %}
+        </ul>
 
-    {% if paginator.pageCount > 1%}
-      <div class="navigate">
-        <span style="padding-right: 10px;">总数：{{ paginator.count }}</span>
-        {% if  paginator.pageNum > 1 %}
-          <a href="/news?pageNum={{paginator.pageNum - 1}}">«上一页</a>
-        {% else %}
-          <a href="/news?pageNum=1">«上一页</a>
-        {% endif %}
-        {% for i in range(1, paginator.pageCount + 1) %}
-          <a href="/news?pageNum={{i}}">{{i}}</a>
-        {% endfor %}
-        {% if paginator.pageNum < paginator.pageCount %}
-        <a href="/news?pageNum={{paginator.pageNum + 1}}">下一页»</a>
-        {% else %}
-        <a href="/news?pageNum={{paginator.pageCount}}">下一页»</a>
-        {% endif %}
+        {% if paginator.pageCount > 1%}
+          <div class="navigate">
+            <span style="padding-right: 10px;">总数：{{ paginator.count }}</span>
+            {% if  paginator.pageNum > 1 %}
+              <a href="/news?pageNum={{paginator.pageNum - 1}}">«上一页</a>
+            {% else %}
+              <a href="/news?pageNum=1">«上一页</a>
+            {% endif %}
+            {% for i in range(1, paginator.pageCount + 1) %}
+              <a href="/news?pageNum={{i}}">{{i}}</a>
+            {% endfor %}
+            {% if paginator.pageNum < paginator.pageCount %}
+            <a href="/news?pageNum={{paginator.pageNum + 1}}">下一页»</a>
+            {% else %}
+            <a href="/news?pageNum={{paginator.pageCount}}">下一页»</a>
+            {% endif %}
+          </div>
+        {% endif  %}
       </div>
-    {% endif  %}
-  </div>
-</div>
+    </div>
+
+    <div class="module">
+      <h5>相关产品</h5>
+      <div class="products">
+        <ul class="clearfix" style="min-height: 188px;height: 188px;">
+         {% for recommend in recommends_list %}
+          <li>
+            <div class="product_info">
+              <p class="product_img">
+              <a href="/products/{{ recommend.category }}/{{ recommend.id }}#banner"><img src="{{ recommend.pic }}" alt="" width="140" height="140"></a>
+              </p>
+              <p class="product_name">
+              <a href="/products/{{ recommend.category  }}/{{ recommend.id }}#banner">{{ recommend.simplename }}</a>
+              </p>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 {% endblock %}

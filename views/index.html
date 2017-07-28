@@ -48,14 +48,32 @@
           <li>
             <div class="product_info">
               <p class="product_img">
-              <a href="/products/{{recommend.category}}/{{recommend.id}}"><img src="{{ recommend.pic }}" alt="" width="130" height="130"></a>
+              <a href="/products/{{recommend.category}}/{{recommend.id}}#banner"><img src="{{ recommend.pic }}" alt="" width="130" height="130"></a>
               </p>
               <p class="product_name">
-              <a href="/products/{{recommend.category}}/{{recommend.id}}">{{ recommend.name }}</a>
+              <a href="/products/{{recommend.category}}/{{recommend.id}}#banner">{{ recommend.simplename }}</a>
               </p>
             </div>
           </li>
           {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="module">
+      <h5>产品视频</h5>
+      <div class="videos_list">
+        <ul class="clearfix">
+          <li>
+            <a href="/videos/1"><img src="/images/videos/01.png" alt="" width="218" height="135"></a>
+            <p>185粉丝机</p>
+          </li>
+          <li><a href="/videos/2"><img src="/images/videos/02.png" alt="" width="218" height="135"></a>
+            <p>185粉丝机</p>
+          </li>
+          <li><a href="/videos/3"><img src="/images/videos/03.png" alt="" width="218" height="135"></a>
+            <p>185粉丝机</p>
+          </li>
         </ul>
       </div>
     </div>

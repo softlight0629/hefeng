@@ -306,7 +306,8 @@ div.intro_content img {
   padding-bottom: 4px;
 }
 
-.news_info ul {
+.news_info {
+  padding-bottom: 16px;
 }
 
 .news_info ul li {
@@ -316,6 +317,10 @@ div.intro_content img {
   padding-right: 5px;
   background:url('/images/newsdian.gif') no-repeat;
   background-position: -15px 10px;
+}
+
+.news_info ul li:last-child {
+  border-bottom: 0;
 }
 
 .news_info ul li a {
@@ -336,6 +341,7 @@ div.intro_content img {
 .category ul {
   padding-left: 5px;
   padding-right: 5px;
+  padding-bottom: 8px;
 }
 
 .category ul li {
@@ -343,6 +349,10 @@ div.intro_content img {
   padding-left: 20px;
   background:url('/images/prodian.gif') no-repeat;
   background-position: 0 13px;
+}
+
+.category ul li:last-child {
+  border-bottom-width: 0;
 }
 
 .category ul li a {
@@ -357,14 +367,15 @@ div.intro_content img {
 }
 
 .products ul {
-  padding-left: 20px;
+  padding: 16px;
+  min-height: 350px;
 }
 
 .products ul li {
   float:left;
-  margin-right:25px;
-  margin-top: 15px;
-  margin-bottom: 25px;
+  width: 25%;
+  text-align: center;
+  margin-bottom: 16px;
 }
 
 .products ul li .product_info {
@@ -372,15 +383,12 @@ div.intro_content img {
 
 .products ul li .product_img {
   padding: 3px;
-  border: 1px solid #c3c3c3;
-  -moz-box-shadow:2px 2px 5px rgba(0, 0, 0, 0.68);
-  -webkit-box-shadow:2px 2px 5px rgba(0, 0, 0, 0.68);
-  box-shadow:2px 2px 5px rgba(0, 0, 0, 0.68);
 }
 
 .products ul li .product_img a {
   display: inline-block;
-  border: 1px solid #c3c3c3;
+  border: 1px solid #d8d8d8;
+  padding: 2px;
 }
 
 .products ul li .product_name {
@@ -390,6 +398,11 @@ div.intro_content img {
 
 .products ul li .product_name a {
   color: #333;
+}
+
+.products ul li:hover .product_name a {
+  color: #333;
+  border-color: #ff0000;
 }
 
 .products ul li:hover .product_name a {
@@ -652,4 +665,18 @@ img{ border:0;}
 
 .msg_btn:hover {
   background: #36588a;
+}
+
+
+.videos_list ul li {
+  width: 33.333%;
+  float: left;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.videos_list ul li img {
+  border: 1px solid #d8d8d8;
+  margin-bottom: 12px;
 }

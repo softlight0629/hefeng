@@ -3,7 +3,7 @@
   <div class="news_info">
     <ul>
       {% for news in news_list%}
-      <li><a href="/news/{{news.id}}" alt="{{news.text}}">{{news.text | truncate(13)}}</a></li>
+      <li><a href="/news/{{news.id}}#banner" alt="{{news.name}}">{{news.name | truncate(13)}}</a></li>
       {% endfor %}
     </ul>
   </div>

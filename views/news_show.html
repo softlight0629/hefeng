@@ -14,6 +14,7 @@ div.news_show {
   border-bottom: 1px dashed #ccc;
   text-align: center;
   font-weight: bold;
+  padding-bottom: 18px;
 }
 
 .news_meta {
@@ -26,19 +27,21 @@ div.news_show {
 }
 
 .summary {
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .news_content {
-  padding: 10px;
+  padding: 8px 16px 32px 16px;
   line-height: 18px;
   border-bottom: 1px solid #666;
+  margin-bottom: 16px;
 }
 
 .news_content p {
   font-size: 14px;
   text-indent: 28px;
   margin-bottom: 10px;
+  line-height: 22px;
 }
 
 .news_content img {
@@ -75,27 +78,47 @@ div.news_show {
       <div class="news_show">
         <div class="news_show_inner">
           <div class="summary">
-            <h1 class='news_title'>{{ news.text }}</h1>
+            <h1 class='news_title'>{{ news.name }}</h1>
             <p class="news_meta">
-            <span>来源：admin 发布时间：2017/02/16</span>
-            <span class="news_pv">浏览次数：358908</span>
+            <span>来源：http://zjwzhefeng.duapp.com</span>
+            <span>发布时间：{{ news.date }}</span>
+            <span class="news_pv">浏览次数：{{ news.pv }}</span>
             </p>
           </div>
           <div class="news_content">
             <div class="news_content_inner">
-              <p>多功能蒸气式红薯粉丝机工艺：红薯—提取淀粉—搅拌调浆—上料—入机漏粉—散粉—上杆晾晒（烘干）—包装—成品入库</p>
-              <p style="text-align:center;"><img src="/images/products/fensiji/145/01.jpg" style="width: 247px; height: 205px;"></p>
-              <p>多功能蒸气式粉丝机特点：适用各种淀粉以及混合淀粉制作粉条；成品晶莹透亮、耐煮耐泡、不糊汤、不断条、不粘连。具有干净卫生、外观平整、晶莹透亮、口感细腻、食用方便、易贮运等优点。 工艺先进，设备结构合理、外形美观、生产产量大、产品品质稳定、操作简易、投资小、见效快</p>
-              <p>多功能蒸气式粉丝机选配套机械：搅拌机、上料机、川粉头、专业粉皮头、传输带等。</p>
-              <p>温州经济技术开发区滨海永林粉丝机，专业的红薯粉丝机厂家，欢迎来电咨询。</p>
-              <p><br></p> 
+              {{ news.content | urlize | safe }}
             </div>
           </div>
         </div>
       <div class="news_nav">
-          <a href="mw">←[上一个新闻：苏丹红、三聚氢胺等走进生活，还能安心地当个吃货吗？]   </a> 
-          <a href="#">[下一个新闻：真空油炸机]→</a> 
+          {% if prev %}
+            <a href="/news/{{ prev.id }}">←[上一个新闻：{{ prev.name }}]   </a> 
+          {% endif %}
+          {% if next %}
+          <a href="/news/{{ next.id }}">[下一个新闻：{{ next.name }}]→</a> 
+          {% endif %}
       </div>
+      </div>
+    </div>
+
+    <div class="module">
+      <h5>相关产品</h5>
+      <div class="products">
+        <ul class="clearfix" style="min-height: 188px;height: 188px;">
+         {% for recommend in recommends_list %}
+          <li>
+            <div class="product_info">
+              <p class="product_img">
+              <a href="/products/{{ recommend.category }}/{{ recommend.id }}#banner"><img src="{{ recommend.pic }}" alt="" width="140" height="140"></a>
+              </p>
+              <p class="product_name">
+              <a href="/products/{{ recommend.category  }}/{{ recommend.id }}#banner">{{ recommend.simplename }}</a>
+              </p>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
   </div>
