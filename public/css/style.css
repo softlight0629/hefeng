@@ -291,6 +291,14 @@ div.intro_content {
   max-height: 300px;
 }
 
+@media only screen and (max-width: 767px){
+  div.intro_content {
+    padding: 15px 15px 10px 15px;
+    font-size: 12px; 
+    max-height: 300px;
+  }
+}
+
 div.intro_content p {
   text-indent: 28px;
   margin-bottom: 8px;
