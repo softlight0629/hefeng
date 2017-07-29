@@ -288,14 +288,16 @@ nav {
 div.intro_content {
   padding: 15px 15px 10px 15px;
   font-size: 14px; 
-  max-height: 300px;
+  max-height: 460px;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 767px){
   div.intro_content {
     padding: 15px 15px 10px 15px;
     font-size: 12px; 
-    max-height: 300px;
+    max-height: 460px;
+    overflow: hidden;
   }
 }
 
