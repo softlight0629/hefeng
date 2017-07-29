@@ -45,6 +45,13 @@ router.get('/baidu_verify_6KcJfONyYo.html', function *(next) {
   yield this.render('baidu_verify_6KcJfONyYo', {});
 });
 
+router.get('/sitemap.html', function *(next) {
+  yield this.render('sitemap', {});
+});
+
+router.get('/sitemap.txt', function *(next) {
+  yield this.render('sitemaptxt', {});
+});
 
 router.get('/:path', function *(next) {
   const news_list = side_news.slice(0, 9);
