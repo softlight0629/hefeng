@@ -41,6 +41,10 @@ router.get('/', function *(next) {
   });
 });
 
+router.get('/baidu_verify_6KcJfONyYo.html', function *(next) {
+  yield this.render('baidu_verify_6KcJfONyYo', {});
+});
+
 
 router.get('/:path', function *(next) {
   const news_list = side_news.slice(0, 9);
