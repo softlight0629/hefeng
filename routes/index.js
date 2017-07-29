@@ -132,6 +132,7 @@ router.get('/news/:id', function* () {
     prev: prevnext.prev,
     next: prevnext.next,
     recommends_list,
+    keywords: news.name,
   });
 });
 
