@@ -45,6 +45,11 @@ router.get('/baidu_verify_6KcJfONyYo.html', function *(next) {
   yield this.render('baidu_verify_6KcJfONyYo', {});
 });
 
+
+router.get('/sogousiteverification.txt', function *(next) {
+  yield this.render('sogousiteverification', {});
+});
+
 router.get('/sitemap.html', function *(next) {
   yield this.render('sitemap', {});
 });
