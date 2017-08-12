@@ -58,6 +58,10 @@ router.get('/sitemap.txt', function *(next) {
   yield this.render('sitemaptxt', {});
 });
 
+router.get('/robots.txt', function *(next) {
+  yield this.render('robots', {});
+});
+
 router.get('/:path', function *(next) {
   const news_list = side_news.slice(0, 9);
 
