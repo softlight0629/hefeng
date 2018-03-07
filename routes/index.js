@@ -41,8 +41,8 @@ router.get('/', function *(next) {
   });
 });
 
-router.get('/baidu_verify_6KcJfONyYo.html', function *(next) {
-  yield this.render('baidu_verify_6KcJfONyYo', {});
+router.get('/baidu_verify_BLB32qFQUI.html’, function *(next) {
+  yield this.render('baidu_verify_BLB32qFQUI', {});
 });
 
 
